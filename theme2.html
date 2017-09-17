@@ -1,0 +1,466 @@
+<html>  
+    <head>
+        <link rel="icon" href="http://www.helpgroup-tn.com/wp-content/uploads/2016/12/favicon-1.ico" type="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="css\bootstrap-theme.css"/>
+        <link rel="stylesheet" type="text/css" href="css\bootstrap.css"/>
+        <link rel="stylesheet" type="text/css" href="Styles\themex.css"/>
+        <link rel="stylesheet" type="text/css" href="Styles\slick.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="Styles\themex.min.css"/>
+        <link rel="stylesheet" type="text/css" href="Styles\slick-themes.css"/>
+        <link rel="stylesheet" type="text/css" href="Styles\font-awesome-4.7.0\css\font-awesome.min.css"/>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>    
+        <script src="js/typed.min.js" type="text/javascript" ></script>
+        <script src="js/pace.min.js" type="text/javascript" ></script>
+        <script src="js/masonry.pkgd.min.js" type="text/javascript" ></script>
+       
+        <script type="text/javascript">
+             $(document).ready(function(){
+                 function DropDown(el) {
+                        this.dd = el;
+                        this.initEvents();
+                    };
+                DropDown.prototype = {
+                    initEvents : function() {
+                        var obj = this;
+
+                        obj.dd.on('click', function(event){
+                            $(this).toggleClass('active');
+                            event.stopPropagation();
+                        }); 
+                    }
+                }
+                
+                $('.containerID').slick({
+                    infinite: true,
+                    speed: 300,
+                    slidesToShow: 3,
+                    autoplay:true,
+                    cssEase:'ease',
+                    mobileFirst:true,
+                    responsive: [
+                            {
+                            breakpoint: 1024,
+                            settings: {
+                                slidesToShow: 3,
+                                slidesToScroll: 3,
+                                infinite: true,
+                                dots: true
+                            }
+                            },
+                            {
+                            breakpoint: 600,
+                            settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 2
+                            }
+                            },
+                            {
+                            breakpoint: 480,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
+                            }
+                            // You can unslick at a given breakpoint now by adding:
+                            // settings: "unslick"
+                            // instead of a settings object
+                        ]
+                            });
+            });   
+                //helper function
+                    function $$(selector, context) {
+                        context = context || document;
+                        var elements = context.querySelectorAll(selector);
+                        return Array.prototype.slice.call(elements);
+                    }
+
+                    window.addEventListener("scroll", function() {
+                        var scrolledHeight= window.pageYOffset;
+                        $$(".parallax").forEach(function(el,index,array) {
+                            var limit= el.offsetTop+ el.offsetHeight;
+                            if(scrolledHeight > el.offsetTop && scrolledHeight <= limit) {
+                                el.style.backgroundPositionY= (scrolledHeight - el.offsetTop) /1.5+ "px";
+                            } 
+                            else {
+                                el.style.backgroundPositionY= "0";
+                            }
+                        });
+                    });
+
+                    $(function () {
+                        
+
+                        $('a[href^="#"]').click(function(event) {
+                        var id = $(this).attr("href");
+                        var offset = 20;
+                        var target = $(id).offset().top - offset;
+
+                        $('html, body').animate({scrollTop:target}, 500);
+                        event.preventDefault();
+                        });
+
+                        });
+              
+        </script>
+    </head>
+    <body>
+
+        <section class="parallax landpage" id="Home" style="height:100vh;" >
+                <nav class="navbar navbar-default navbar-fixed-top">
+                        <div class="container-fluid">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand" href="#">
+                                    <img id="logo-navbar-middle" src="http://www.helpgroup-tn.com/wp-content/uploads/2016/12/logo.png" alt="Logo Thing main logo" style="width: 63%;margin-top: -21px;">
+                                </a>
+                            </div>
+                            <div id="navbar" class="navbar-collapse collapse" style="padding: 20px;">
+                                <ul class="nav navbar-nav navbar-right">
+                                <li class="active"><a href="#Home">Home</a></li>
+                                    <li><a href="#Us">About Us</a></li>
+                                    <li><a href="#Services">Our Services</a></li>
+                                    <li><a href="#Contact">Contact Us</a></li>
+                                    <li>
+                                    <div id="dd" class="wrapper-dropdown-2">Sign in as
+                                            <ul class="dropdownx">
+                                                <li><a href="#"><i class="icon-twitter icon-large"></i>Particular</a></li>
+                                                <li><a href="#"><i class="icon-github icon-large"></i>Professional</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div><!--/.nav-collapse -->
+                        </div>
+                    </nav>
+                <div class="hsContainer">
+                        <div class="hsContent">
+                            <div class="container">
+                            </div>
+                        </div>
+                </div>
+       
+        </section>
+
+        <section class="parallax Us" id="Us" style="height:100vh;padding-top: 4em;">
+            <div>
+                <div>
+                    <div style="text-align:center; margin-top: 10vh;padding-top: 10px;">
+                        <h2 class="shadowtxt">Company</h2>
+                        <h1 class="titleshadow">We are Go ahead</h1>
+                        <div class="containerID col-md-12">
+
+                            <div class="container" style="text-align:center;">
+                                <div class="white-box testimonials-box"> 
+                                    <span class="fxw-member-image customer-image">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRo3wc6MK6UBzaJTE7YzX0kQJT64sdfJHNTGD9c_9PFv7i3rlBMiQ" width="55" height="55">
+                                    </span>
+                                    <h5 class="customer-name">Ahmed Chouchene</h5>
+                                    <h6 class="customer-position">CEO</h6>
+                                    <p class="customer-text">
+                                    Phasellus sed dolor eu ipsum maximus egestas in sit amet magna. 
+                                            Mauris risus nisl, dictum vitae laoreet non, viverra a ligula. 
+                                            Curabitur molestie gravida lacus. Fusce nisl nibh, maximus sed velit et, pharetra ultrices metus.
+                                            Maecenas viverra ex ac ex convallis pulvinar. Donec id orci id dolor finibus elementum eget vitae ligula.
+                                            Nullam eget tristique dui.
+                                    </p>
+                                    <p class="customoer-logo">
+                                    <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                                    <i class="fa fa-google-plus-square" aria-hidden="true"></i>
+                                        </p>
+                                    <p class="customer-company-name">Consolidate Software GmbH &amp; Co KG</p>
+                                </div>
+                            </div>
+
+                        
+                            <div class="container" style="text-align:center;">
+                                <div class="white-box testimonials-box"> 
+                                    <span class="fxw-member-image customer-image">
+                                        <img src="http://3.bp.blogspot.com/-IsJhm14BRFQ/UTtch9eci-I/AAAAAAAABGo/VDjzvqvV9y4/s1600/Fotolia_33434621_Subscription_XXL.jpg" width="55" height="55">
+                                    </span>
+                                    <h5 class="customer-name">Riadh Dkhil</h5>
+                                    <h6 class="customer-position">Logistical Manager</h6>
+                                    <p class="customer-text">
+                                    Phasellus sed dolor eu ipsum maximus egestas in sit amet magna. 
+                                            Mauris risus nisl, dictum vitae laoreet non, viverra a ligula. 
+                                            Curabitur molestie gravida lacus. Fusce nisl nibh, maximus sed velit et, pharetra ultrices metus.
+                                            Maecenas viverra ex ac ex convallis pulvinar. Donec id orci id dolor finibus elementum eget vitae ligula.
+                                            Nullam eget tristique dui.
+                                    </p>
+                                    <p class="customoer-logo">
+                                    <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                                    <i class="fa fa-google-plus-square" aria-hidden="true"></i>
+                                    </p>
+                                    <p class="customer-company-name">Consolidate Software GmbH &amp; Co KG</p>
+                                </div>
+                            </div>
+                        
+                            
+                            <div class="container" style="text-align:center;">
+                                    <div class="white-box testimonials-box"> 
+                                        <span class="fxw-member-image customer-image">
+                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRj3DO4KCt-chkKO5VAFcyzeH1SKaoRnOprxJv9LperHva2-7VE" width="55" height="55">
+                                        </span>
+                                        <h5 class="customer-name">Vin Diesel</h5>
+                                        <h6 class="customer-position">CFO</h6>
+                                        <p class="customer-text">
+                                            Phasellus sed dolor eu ipsum maximus egestas in sit amet magna. 
+                                            Mauris risus nisl, dictum vitae laoreet non, viverra a ligula. 
+                                            Curabitur molestie gravida lacus. Fusce nisl nibh, maximus sed velit et, pharetra ultrices metus.
+                                            Maecenas viverra ex ac ex convallis pulvinar. Donec id orci id dolor finibus elementum eget vitae ligula.
+                                            Nullam eget tristique dui.
+                                        </p>
+                                        <p class="customoer-logo">
+                                            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                                            <i class="fa fa-google-plus-square" aria-hidden="true"></i>
+                                        </p>
+                                        <p class="customer-company-name">Consolidate Software GmbH &amp; Co KG</p>
+                                    </div>
+                            </div>
+                        
+                        
+                            <div class="container" style="text-align:center;">
+                                    <div class="white-box testimonials-box"> 
+                                        <span class="fxw-member-image customer-image">
+                                            <img src="http://static3.businessinsider.com/image/54fd81f469beddfe5a7376e0/female-tech-ceo-marissa-mayers-view-on-gender-sets-us-back.jpg" width="55" height="55">
+                                        </span>
+                                        <h5 class="customer-name">Hela Chouchen</h5>
+                                        <h6 class="customer-position">CEO's Wife</h6>
+                                        <p class="customer-text">
+                                            Phasellus sed dolor eu ipsum maximus egestas in sit amet magna. 
+                                            Mauris risus nisl, dictum vitae laoreet non, viverra a ligula. 
+                                            Curabitur molestie gravida lacus. Fusce nisl nibh, maximus sed velit et, pharetra ultrices metus.
+                                            Maecenas viverra ex ac ex convallis pulvinar. Donec id orci id dolor finibus elementum eget vitae ligula.
+                                            Nullam eget tristique dui.
+                                        </p>
+                                        <p class="customoer-logo">
+                                            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                                            <i class="fa fa-google-plus-square" aria-hidden="true"></i>
+                                    </p>
+                                        <p class="customer-company-name">Consolidate Software GmbH &amp; Co KG</p>
+                                    </div>
+                            </div>
+                        
+                        
+                            <div class="container" style="text-align:center;">
+                                    <div class="white-box testimonials-box"> 
+                                        <span class="fxw-member-image customer-image">
+                                            <img src="data:image/jpeg;base64,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" width="55" height="55">
+                                        </span>
+                                        <h5 class="customer-name">Denzel Washington</h5>
+                                        <h6 class="customer-position">IT Manager</h6>
+                                        <p class="customer-text">
+                                            Phasellus sed dolor eu ipsum maximus egestas in sit amet magna. 
+                                            Mauris risus nisl, dictum vitae laoreet non, viverra a ligula. 
+                                            Curabitur molestie gravida lacus. Fusce nisl nibh, maximus sed velit et, pharetra ultrices metus.
+                                            Maecenas viverra ex ac ex convallis pulvinar. Donec id orci id dolor finibus elementum eget vitae ligula.
+                                            Nullam eget tristique dui.
+                                        </p>
+                                        <p class="customoer-logo">
+                                            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                                            <i class="fa fa-google-plus-square" aria-hidden="true"></i>
+                                        </p>
+                                        <p class="customer-company-name">Consolidate Software GmbH &amp; Co KG</p>
+                                    </div>
+                            </div>
+                           
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>              
+        </section>
+        <section class="parallax Services" id="Services" style="height:100vh;margin-top: 30px;padding-top: 93px;">
+            <div>
+                    <div>
+                        <div style="text-align:center; ">
+                            <h2 class="shadowtxt">Services</h2>
+                            <h1 class="titleshadow">What we do</h1>
+                                <div  class="container" style="padding-top: 60px;">
+                                    <div class="grid ">
+                                        <!-- width of .grid-sizer used for columnWidth -->
+
+                                        <div class="medium-12 large-4 column sbg-tile-grid">
+
+                                            <a href="/" class="sbg-tile-link" style="background:linear-gradient( rgba(21, 14, 86, 0.52),rgba(21, 14, 86, 0.49)),url(Styles/Capture.PNG);background-size:cover;">
+                                                <div class="sbg-tile-wrapper">
+                                                    <h3 class="title">Mobile Healthare Solutions</h3>
+                                                    <p class="details">It’s easier than you think.</p>
+                                                </div>
+                                            </a>
+
+                                        </div>
+
+                                        <div class="medium-12 large-4 column sbg-tile-grid">
+
+                                            <a href="/" class="sbg-tile-link" style="background:linear-gradient( rgba(21, 14, 86, 0.52),rgba(21, 14, 86, 0.49)),url(Styles/rawpixel-com-250087.jpg);background-size:cover;">
+                                                <div class="sbg-tile-wrapper">
+                                                    <h3 class="title">Delegated Management-TPA</h3>
+                                                    <p class="details">It’s easier than you think.</p>
+                                                </div>
+                                            </a>
+            
+                                        </div>
+                                        
+                                        <div class="medium-12 large-4 column sbg-tile-grid">
+
+                                            <a href="/" class="sbg-tile-link" style="background:linear-gradient( rgba(21, 14, 86, 0.52),rgba(21, 14, 86, 0.49)),url(Styles/roman-logov-100555.jpg);background-size:cover;">
+                                                <div class="sbg-tile-wrapper">
+                                                    <h3 class="title">Delegated Management-TPA</h3>
+                                                    <p class="details">It’s easier than you think.</p>
+                                                </div>
+                                            </a>
+            
+                                        </div>
+                                        
+                                        <div class="medium-12 large-4 column sbg-tile-grid">
+
+                                            <a href="/" class="sbg-tile-link" style="background:linear-gradient( rgba(21, 14, 86, 0.52),rgba(21, 14, 86, 0.49)),url(Styles/rodion-kutsaev-38515.jpg);background-size:cover;">
+                                                <div class="sbg-tile-wrapper">
+                                                    <h3 class="title">Health and Safety Consulting</h3>
+                                                    <p class="details">It’s easier than you think.</p>
+                                                </div>
+                                            </a>
+            
+                                        </div>
+
+                                        <div class="medium-12 large-4 column sbg-tile-grid">
+
+                                            <a href="/" class="sbg-tile-link" style="background:linear-gradient( rgba(21, 14, 86, 0.52),rgba(21, 14, 86, 0.49)),url(Styles/breather-187924.jpg);background-size:cover;">
+                                                <div class="sbg-tile-wrapper">
+                                                    <h3 class="title">Repatriation and Sanitary Evacuation</h3>
+                                                    <p class="details">It’s easier than you think.</p>
+                                                </div>
+                                            </a>
+            
+                                        </div>
+                                        
+                                        <div class="medium-12 large-4 column sbg-tile-grid">
+
+                                            <a href="/" class="sbg-tile-link" style="background:linear-gradient( rgba(21, 14, 86, 0.52),rgba(21, 14, 86, 0.49)),url(Styles/changyu-hu-4672.jpg);background-size:cover;">
+                                                <div class="sbg-tile-wrapper">
+                                                    <h3 class="title">Management of Care Networks </h3>
+                                                    <p class="details">It’s easier than you think.</p>
+                                                </div>
+                                            </a>
+            
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+       
+      
+      
+        </section>
+        <section class="parallax Contact" id="Contact" style="height: 100vh; margin-top: 30px; padding-top: 103px; text-align: center; background-position-y: 33.3333px;">
+            <h2 class="shadowtxt">Contact</h2>
+            <h1 class="titleshadow">Get In Touch</h1>
+            <div class="" style="padding: 50px;width: 100%;">
+                <div class="col-md-6 col-sm-12" style="height:100%;padding-top:20px;background: url('Styles/map.png');background-position: 57%;">
+
+                </div>
+                <div class="col-md-6 col-sm-12" style="background-color: #2b2b2b;height:100%;/* float: left; */">
+                    <div class="container">
+				<div class="container">
+				<form>
+					<div class="col-md-6 form-line">
+			  			<div class="form-group">
+			  				<label for="exampleInputUsername">Your name</label>
+					    	<input type="text" class="form-control" id="" placeholder=" Enter Name">
+				  		</div>
+				  		<div class="form-group">
+					    	<label for="exampleInputEmail">Email Address</label>
+					    	<input type="email" class="form-control" id="exampleInputEmail" placeholder=" Enter Email id">
+					  	</div>	
+					  	<div class="form-group">
+					    	<label for="telephone">Mobile No.</label>
+					    	<input type="tel" class="form-control" id="telephone" placeholder=" Enter 10-digit mobile no.">
+			  			</div>
+                        <div class="form-group">
+			  				<label for="description"> Message</label>
+			  			 	<textarea class="form-control" id="description" placeholder="Enter Your Message"></textarea>
+			  			</div>
+                        <div>
+                            <button type="button" class="btn"><i class="fa fa-paper-plane" aria-hidden="true"></i>  Send Message</button>
+			  			</div>
+			  		</div>
+			  		
+				</form>
+			</div>
+			</div>
+                </div>
+            </div>
+            
+        </section>
+        <footer class="footer">
+
+        </footer>
+        <script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
+        <script src="js/slick.js" type="text/javascript" ></script>
+        <script src="js/bootstrap.min.js" type="text/javascript" ></script>
+        <script src="js/Skrollr.js" type="text/javascript" ></script>
+        <script type="text/javascript">
+            
+			function DropDown(el) {
+				this.dd = el;
+				this.placeholder = this.dd.children('span');
+				this.opts = this.dd.find('ul.dropdown > li');
+				this.val = '';
+				this.index = -1;
+				this.initEvents();
+			}
+			DropDown.prototype = {
+				initEvents : function() {
+					var obj = this;
+
+					obj.dd.on('click', function(event){
+						$(this).toggleClass('active');
+						return false;
+					});
+
+					obj.opts.on('click',function(){
+						var opt = $(this);
+						obj.val = opt.text();
+						obj.index = opt.index();
+						obj.placeholder.text(obj.val);
+					});
+				},
+				getValue : function() {
+					return this.val;
+				},
+				getIndex : function() {
+					return this.index;
+				}
+			}
+
+			$(function() {
+
+				var dd = new DropDown( $('#dd') );
+
+				$(document).click(function() {
+					// all dropdowns
+					$('.wrapper-dropdown-3').removeClass('active');
+				});
+
+			});
+
+            $(function () {
+                $(document).scroll(function () {
+                    var $nav = $(".navbar-fixed-top");
+                    $nav.toggleClass('scrolled', $(this).scrollTop()> 50 + $nav.height());
+                    $(".dropdownx").toggleClass('menu', $(this).scrollTop()> 100 + $nav.height());
+                });
+            });
+        </script>
+   
+    </body>
+</html>
